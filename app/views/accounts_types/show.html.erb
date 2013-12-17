@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @accounts_type.name %>
+</p>
+
+<p>
+  <b>Sign:</b>
+  <%= @accounts_type.sign %>
+</p>
+
+
+<%= link_to 'Edit', edit_accounts_type_path(@accounts_type) %> |
+<%= link_to 'Back', accounts_types_path %>

@@ -1,7 +1,14 @@
 Ostaz::Application.routes.draw do
-  resources :account_types
+  resources :accounts_types
 
 
+  devise_for :users
+
+  get "welcome/index"
+
+  resources :account_types 
+
+  root :to => "welcome#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

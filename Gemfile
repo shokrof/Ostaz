@@ -8,10 +8,10 @@ gem 'rails', '3.2.14'
 gem 'sqlite3'
 
 
-
+gem 'devise'
 
 gem 'execjs'
-
+gem 'haml'
 group :test do
  gem 'rspec-rails'
  gem 'execjs'
