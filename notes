@@ -1,0 +1,3 @@
+in file /config/enviroments/development.rb there is line to describe mailer options
+config.action_mailer.default_url_options = { :host => 'localhost:3000' } check to can send emails
+
