@@ -4,10 +4,7 @@ class AccountsController < ApplicationController
   def index
     @accounts = Account.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @accounts }
-    end
+    
   end
 
   # GET /accounts/1
@@ -24,12 +21,9 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-    @account = Account.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @account }
-    end
+    @account_types=[]
+    AccountType.all.each {|a| @account_types.push a.name}
+    session[:project]=3
   end
 
   # GET /accounts/1/edit
@@ -40,9 +34,11 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.json
   def create
-    @account = Account.new(params[:account])
-
-    respond_to do |format|
+    params[:account][:account_type_id]=(AccountType.find_by_name params[:account][:account] ).id
+    params[:account].delete :account
+    params[:account][:project_id]=session[:project]
+    @account=Account.new params[:account]
+        respond_to do |format|
       if @account.save
         format.html { redirect_to @account, notice: 'Account was successfully created.' }
         format.json { render json: @account, status: :created, location: @account }
@@ -51,6 +47,7 @@ class AccountsController < ApplicationController
         format.json { render json: @account.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PUT /accounts/1

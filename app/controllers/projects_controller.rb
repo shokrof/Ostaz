@@ -3,11 +3,7 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @projects }
-    end
+    @Users=User.all
   end
 
   # GET /projects/1
@@ -40,6 +36,7 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
+    params[:project][:user_id]=current_user.id
     @project = Project.new(params[:project])
 
     respond_to do |format|

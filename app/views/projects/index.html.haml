@@ -1,0 +1,17 @@
+%h1 All Projects
+%table#projects
+  %thead
+    %tr
+      %th Name
+      %th User
+  %tbody
+  - @projects.each do |p|
+    %tr
+      %td= p.name
+      %td= p.user.email
+      %td= link_to "More about #{p.name}", project_path(p)
+
+= link_to 'Add new movie', new_project_path
+
+		
+
