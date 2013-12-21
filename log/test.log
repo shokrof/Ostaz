@@ -1,0 +1,73 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (83.4ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 3], ["amount", 0], ["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["name", "Capital"], ["project_id", nil], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 1], ["amount", 0], ["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["name", "Bank"], ["project_id", nil], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 2], ["amount", 0], ["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["name", "Debt"], ["project_id", nil], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 4], ["amount", 0], ["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["name", "Phone_bill"], ["project_id", nil], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 3], ["amount", 0], ["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["name", "Capital"], ["project_id", nil], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 1], ["amount", 0], ["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["name", "Bank"], ["project_id", nil], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 2], ["amount", 0], ["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["name", "Debt"], ["project_id", nil], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 4], ["amount", 0], ["created_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00], ["name", "Phone_bill"], ["project_id", nil], ["updated_at", Sat, 21 Dec 2013 22:51:59 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
