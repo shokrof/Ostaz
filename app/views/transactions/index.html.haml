@@ -1,0 +1,24 @@
+%h1 All Projects
+%table#projects
+  %thead
+    %tr
+      %th Credit
+      %th Debit
+      %th Amount
+      %th Date
+      %th Note
+      %th User
+  %tbody
+  - @credits.each do |p|
+    %tr
+      %td= p.account.name
+      %td= p.double_entry.account.name
+      %td= p.amount
+      %td= p.created_at
+      %td= p.note
+      %td= p.user.email
+
+= link_to 'Make New Transaction', new_transaction_path
+
+		
+

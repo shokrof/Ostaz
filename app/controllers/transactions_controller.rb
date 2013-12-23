@@ -2,12 +2,7 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @transactions }
-    end
+    @credits = Transaction.where("transaction_type = 'credit'")
   end
 
   # GET /transactions/1
@@ -23,13 +18,12 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   # GET /transactions/new.json
+
   def new
     @transaction = Transaction.new
+    @account=Account.all.collect {|p| p.name }
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @transaction }
-    end
+ 
   end
 
   # GET /transactions/1/edit
@@ -40,15 +34,32 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-    @transaction = Transaction.new(params[:transaction])
 
+  @account=Account.all.collect {|p| p.name }
+    created= true
+    msg=""
+    if params[:credit] == params[:debit]
+      msg="Credit and debit cant be on the same account"
+      created=false
+    else
+      begin
+        account_credit=Account.find_by_name params[:credit]
+        account_debit=Account.find_by_name params[:debit]
+        Transaction.make(account_credit.id,account_debit.id,Integer(params[:transaction][:amount]),params[:transaction][:note],current_user.id) 
+      rescue Exception => e
+      	created = false
+        msg=e.message
+      end
+    end
+
+    
     respond_to do |format|
-      if @transaction.save
-        format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-        format.json { render json: @transaction, status: :created, location: @transaction }
+      if created
+        format.html { redirect_to transactions_path, notice: 'Transaction was successfully created.' }
+        format.json { render json: transactions_path, status: :created, location: @transaction }
       else
-        format.html { render action: "new" }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
+        format.html { redirect_to new_transaction_path, notice:msg }
+        format.json { render json: transactions_path, status: :created, location: @transaction }
       end
     end
   end
