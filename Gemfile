@@ -18,12 +18,6 @@ group :development ,:test do
  gem 'simplecov', :require =>false
 end
 
-group : do
- gem 'rspec-rails'
- gem 'execjs'
- gem 'simplecov', :require =>false
-end
-
 group :production do
   gem 'pg'
 end
