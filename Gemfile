@@ -4,18 +4,30 @@ gem 'rails', '3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+ruby '1.9.3'
 
-gem 'sqlite3'
 gem 'devise'
 gem 'execjs'
 gem 'haml'
 
 
-group :test do
+group :development ,:test do
+ gem 'rspec-rails'
+ gem 'sqlite3'
+ gem 'execjs'
+ gem 'simplecov', :require =>false
+end
+
+group : do
  gem 'rspec-rails'
  gem 'execjs'
  gem 'simplecov', :require =>false
 end
+
+group :production do
+  gem 'pg'
+end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
