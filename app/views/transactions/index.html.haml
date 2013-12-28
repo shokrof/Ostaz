@@ -9,10 +9,10 @@
       %th Note
       %th User
   %tbody
-  - @credits.each do |p|
+  - @transactions.each do |p|
     %tr
-      %td= p.account.name
-      %td= p.double_entry.account.name
+      %td= p.credit.name
+      %td= p.debit.name
       %td= p.amount
       %td= p.created_at
       %td= p.note

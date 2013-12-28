@@ -2,7 +2,7 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @credits = Transaction.where("transaction_type = 'credit'")
+    @transactions = Transaction.all
   end
 
   # GET /transactions/1
