@@ -1,8 +1,9 @@
 class CreateAccountTypes < ActiveRecord::Migration
   def change
-    create_table :account_types do |t|
+drop_table :account_types    
+create_table :account_types do |t|
       t.string :name
-      t.number :sign
+      t.integer :sign
 
       t.timestamps
     end

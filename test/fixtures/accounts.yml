@@ -2,8 +2,10 @@
 
 one:
   name: MyString
-  sign: 1
+  amount: 1
+  account_type_id: 1
 
 two:
   name: MyString
-  sign: 1
+  amount: 1
+  account_type_id: 1

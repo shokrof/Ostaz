@@ -1,5 +1,8 @@
 Ostaz::Application.routes.draw do
-  resources :accounts_types
+  resources :account_types
+
+
+  resources :accounts
 
 
   devise_for :users
