@@ -1,4 +1,9 @@
-%h1 All Projects
+%h1 All Transactions
+
+= form_tag transactions_path ,:method => :get ,:id => :search_transaction do
+  Search by note
+  = search_field_tag :note
+  = submit_tag 'Refresh', :id => 'search_submit'
 %table#projects
   %thead
     %tr
@@ -9,10 +14,10 @@
       %th Note
       %th User
   %tbody
-  - @credits.each do |p|
+  - @transactions.each do |p|
     %tr
-      %td= p.account.name
-      %td= p.double_entry.account.name
+      %td= p.credit.name
+      %td= p.debit.name
       %td= p.amount
       %td= p.created_at
       %td= p.note

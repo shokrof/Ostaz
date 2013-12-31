@@ -2,7 +2,11 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @credits = Transaction.where("transaction_type = 'credit'")
+    if params[:note] && !params[:note].empty?
+      @transactions =Transaction.find_all_by_note params[:note]
+    else
+      @transactions = Transaction.all
+    end
   end
 
   # GET /transactions/1
@@ -38,31 +42,25 @@ class TransactionsController < ApplicationController
   @account=Account.all.collect {|p| p.name }
     created= true
     msg=""
-    if params[:credit] == params[:debit]
-      msg="Credit and debit cant be on the same account"
-      created=false
-    else
-      begin
         account_credit=Account.find_by_name params[:credit]
         account_debit=Account.find_by_name params[:debit]
-        Transaction.make(account_credit.id,account_debit.id,Integer(params[:transaction][:amount]),params[:transaction][:note],current_user.id) 
-      rescue Exception => e
-      	created = false
-        msg=e.message
+        params[:transaction][:account_id_credit]=account_credit.id
+	params[:transaction][:account_id_debit]=account_debit.id
+	params[:transaction][:user_id]=current_user.id
+        @t=Transaction.new params[:transaction]
+    
+      respond_to do |format|
+      if @t.save
+        format.html { redirect_to @t, notice: 'Account was successfully created.' }
+        format.json { render json: @t, status: :created, location: @t }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @t.errors, status: :unprocessable_entity }
       end
     end
 
-    
-    respond_to do |format|
-      if created
-        format.html { redirect_to transactions_path, notice: 'Transaction was successfully created.' }
-        format.json { render json: transactions_path, status: :created, location: @transaction }
-      else
-        format.html { redirect_to new_transaction_path, notice:msg }
-        format.json { render json: transactions_path, status: :created, location: @transaction }
-      end
-    end
   end
+
 
   # PUT /transactions/1
   # PUT /transactions/1.json

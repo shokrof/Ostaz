@@ -2709,3 +2709,407 @@ Connecting to database specified by database.yml
   [1m[35mAccount Load (0.3ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Phone_bill' LIMIT 1
   [1m[36mAccount Load (0.3ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Capital' LIMIT 1[0m
   [1m[35m (0.4ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (27.3ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:54:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (27.6ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:56:08 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (28.2ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 3], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["name", "Capital"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 1], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["name", "Bank"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 2], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["name", "Debit"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 4], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["name", "Phone_bill"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Bank' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Capital' LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Debit' LIMIT 1
+  [1m[36mAccount Load (0.4ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Phone_bill' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.2ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccountType Load (0.2ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 1], ["account_id_debit", 2], ["amount", 100000], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["note", "put capital"], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 1], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "amount" = 100000, "updated_at" = '2013-12-28 20:57:42.543138' WHERE "accounts"."id" = 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 2], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 100000, "updated_at" = '2013-12-28 20:57:42.547232' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 3], ["account_id_debit", 2], ["amount", 10000], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["note", "take a Debt"], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 3], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  UPDATE "accounts" SET "amount" = 10000, "updated_at" = '2013-12-28 20:57:42.589904' WHERE "accounts"."id" = 3
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 2], ["amount", 100000], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 110000, "updated_at" = '2013-12-28 20:57:42.593137' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 2], ["account_id_debit", 4], ["amount", 100], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["note", "pay phone bill"], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 2], ["amount", 110000], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "amount" = 109900, "updated_at" = '2013-12-28 20:57:42.607817' WHERE "accounts"."id" = 2
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 4], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 100, "updated_at" = '2013-12-28 20:57:42.611550' WHERE "accounts"."id" = 4[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 2], ["account_id_debit", 3], ["amount", 5000], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["note", "pay part of the debt"], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccountType Load (0.2ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 2], ["amount", 109900], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "amount" = 104900, "updated_at" = '2013-12-28 20:57:42.624139' WHERE "accounts"."id" = 2
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 3], ["amount", 10000], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 5000, "updated_at" = '2013-12-28 20:57:42.626917' WHERE "accounts"."id" = 3[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.5ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Bank' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Debit' LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Phone_bill' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Capital' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 3], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["name", "Capital"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 1], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["name", "Bank"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 2], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["name", "Debit"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 4], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["name", "Phone_bill"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 1], ["account_id_debit", 2], ["amount", 1000], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["note", "put some cash"], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 1], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "amount" = 1000, "updated_at" = '2013-12-28 20:57:42.657492' WHERE "accounts"."id" = 1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 2], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:57:42 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 1000, "updated_at" = '2013-12-28 20:57:42.660237' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAccount Load (0.5ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (27.4ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 3], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00], ["name", "Capital"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 1], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00], ["name", "Bank"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 2], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00], ["name", "Debit"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 4], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00], ["name", "Phone_bill"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:58:36 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mAccount Load (0.2ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Bank' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Capital' LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Debit' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Phone_bill' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccountType Load (0.2ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 1], ["account_id_debit", 2], ["amount", 100000], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["note", "put capital"], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccountType Load (0.4ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 1], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "amount" = 100000, "updated_at" = '2013-12-28 20:58:37.039882' WHERE "accounts"."id" = 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 2], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 100000, "updated_at" = '2013-12-28 20:58:37.043642' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 3], ["account_id_debit", 2], ["amount", 10000], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["note", "take a Debt"], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 3], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "amount" = 10000, "updated_at" = '2013-12-28 20:58:37.082874' WHERE "accounts"."id" = 3
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 2], ["amount", 100000], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 110000, "updated_at" = '2013-12-28 20:58:37.085397' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.3ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 2], ["account_id_debit", 4], ["amount", 100], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["note", "pay phone bill"], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 2], ["amount", 110000], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "amount" = 109900, "updated_at" = '2013-12-28 20:58:37.099688' WHERE "accounts"."id" = 2
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 4], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 100, "updated_at" = '2013-12-28 20:58:37.102515' WHERE "accounts"."id" = 4[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mAccountType Load (0.2ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 2], ["account_id_debit", 3], ["amount", 5000], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["note", "pay part of the debt"], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 2], ["amount", 109900], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "amount" = 104900, "updated_at" = '2013-12-28 20:58:37.116675' WHERE "accounts"."id" = 2
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 3], ["amount", 10000], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 5000, "updated_at" = '2013-12-28 20:58:37.119095' WHERE "accounts"."id" = 3[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" [0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 2 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 4 LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Bank' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Debit' LIMIT 1[0m
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Phone_bill' LIMIT 1
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."name" = 'Capital' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Asset"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Liabilities"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["credit", 1], ["debit", -1], ["name", "Equity"], ["sign", 1], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "account_types" ("created_at", "credit", "debit", "name", "sign", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["credit", -1], ["debit", 1], ["name", "Expenses"], ["sign", -1], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 3], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["name", "Capital"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 1], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["name", "Bank"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["account_type_id", 2], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["name", "Debit"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "accounts" ("account_type_id", "amount", "created_at", "name", "project_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["account_type_id", 4], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["name", "Phone_bill"], ["project_id", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1[0m
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "transactions" ("account_id_credit", "account_id_debit", "amount", "created_at", "note", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["account_id_credit", 1], ["account_id_debit", 2], ["amount", 1000], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["note", "put some cash"], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["user_id", 1]]
+  [1m[35mAccount Load (0.1ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccountType Load (0.1ms)[0m  SELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 3 LIMIT 1
+  [1m[36mAccountType Load (0.1ms)[0m  [1mSELECT "account_types".* FROM "account_types" WHERE "account_types"."id" = 1 LIMIT 1[0m
+  [1m[35mAccount Load (0.0ms)[0m  SELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["account_id", 1], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  UPDATE "accounts" SET "amount" = 1000, "updated_at" = '2013-12-28 20:58:37.147047' WHERE "accounts"."id" = 1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "histories" ("account_id", "amount", "created_at", "date", "updated_at") VALUES (?, ?, ?, ?, ?)  [["account_id", 2], ["amount", 0], ["created_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00], ["date", nil], ["updated_at", Sat, 28 Dec 2013 20:58:37 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mUPDATE "accounts" SET "amount" = 1000, "updated_at" = '2013-12-28 20:58:37.149325' WHERE "accounts"."id" = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mAccount Load (0.0ms)[0m  [1mSELECT "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  rollback transaction
