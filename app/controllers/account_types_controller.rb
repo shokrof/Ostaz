@@ -25,11 +25,6 @@ class AccountTypesController < ApplicationController
   # GET /account_types/new.json
   def new
     @account_type = AccountType.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @account_type }
-    end
   end
 
   # GET /account_types/1/edit
