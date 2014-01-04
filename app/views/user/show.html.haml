@@ -1,0 +1,23 @@
+%h1="Hi I am " + @user.email
+%h2 My transactions
+= form_tag user_show_path ,:method => :get ,:id => :search_transaction do
+  Search by note
+  = search_field_tag :note
+  = submit_tag 'Refresh', :id => 'search_submit'
+%table#transactions
+  %thead
+    %tr
+      %th Credit
+      %th Debit
+      %th Amount
+      %th Date
+      %th Note
+  %tbody
+  - @transactions.each do |p|
+    %tr
+      %td= p.credit.name
+      %td= p.debit.name
+      %td= p.amount
+      %td= p.created_at
+      %td= p.note
+
