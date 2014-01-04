@@ -63,10 +63,7 @@ GEM
     mime-types (1.25.1)
     multi_json (1.8.2)
     orm_adapter (0.5.0)
-<<<<<<< HEAD
     pg (0.17.0)
-=======
->>>>>>> c3d283b609bf94333a474bd2c510c6f11a90c018
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -90,11 +87,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-<<<<<<< HEAD
     rake (10.1.1)
-=======
-    rake (10.1.0)
->>>>>>> c3d283b609bf94333a474bd2c510c6f11a90c018
     rdoc (3.12.2)
       json (~> 1.4)
     rspec-core (2.14.7)
@@ -108,11 +101,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-<<<<<<< HEAD
     sass (3.2.13)
-=======
-    sass (3.2.12)
->>>>>>> c3d283b609bf94333a474bd2c510c6f11a90c018
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -135,11 +124,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-<<<<<<< HEAD
     uglifier (2.4.0)
-=======
-    uglifier (2.3.3)
->>>>>>> c3d283b609bf94333a474bd2c510c6f11a90c018
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)
@@ -154,10 +139,7 @@ DEPENDENCIES
   execjs
   haml
   jquery-rails
-<<<<<<< HEAD
   pg
-=======
->>>>>>> c3d283b609bf94333a474bd2c510c6f11a90c018
   rails (= 3.2.14)
   rspec-rails
   sass-rails (~> 3.2.3)

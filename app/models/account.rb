@@ -3,7 +3,8 @@ class Account < ActiveRecord::Base
   belongs_to :account_type
   belongs_to :project
   has_many :histories
-  has_many :transactions
+  has_many :transactions_credit , class_name: "Transaction" ,foreign_key: "account_id_credit"
+  has_many :transactions_debit , class_name: "Transaction" ,foreign_key: "account_id_debit"
   before_save do |acc|
         begin
         a=Account.find acc.id
