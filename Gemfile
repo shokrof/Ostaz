@@ -9,13 +9,14 @@ ruby '1.9.3'
 gem 'devise'
 gem 'execjs'
 gem 'haml'
-
+gem 'bootstrap-sass'
 
 group :development ,:test do
  gem 'rspec-rails'
  gem 'sqlite3'
  gem 'execjs'
  gem 'simplecov', :require =>false
+ gem 'rails_layout'
 end
 
 group :production do
