@@ -1,11 +1,14 @@
 !!!
 %html
   %head
-    %title Ostaz
-    = stylesheet_link_tag    "application", :media => "all"
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "Ostaz"
+    %meta{content: content_for?(:description) ? yield(:description) : "Ostaz", name: "description"}/
+    = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    %header= render 'layouts/navigation'
+    %main{role: "main"}
+      = render 'layouts/messages'
+      = yield
