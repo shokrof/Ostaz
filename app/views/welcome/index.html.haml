@@ -1,1 +1,39 @@
-%strong Welcome
+%h1 Transactions
+.well
+ = form_tag transactions_path ,:class => "form-horizontal" do 
+  = label :transaction, :credit, 'Credit'
+  
+  = select :transaction ,:credit ,options_for_select(@account)	
+
+  = label :transaction, :debit, 'Debit'
+  = select :transaction ,:debit ,options_for_select(@account)
+  = label :transaction, :amount, 'Amount'
+  = text_field :transaction ,'amount'
+  = label :transaction ,:note , 'Note'
+  = text_field  :transaction ,'note'
+  = submit_tag 'Save Changes', :id => 'make submit' , :class => "btn btn-primary"
+
+%table#projects.table.table-striped.table-bordered.table-hover
+ %thead
+  %tr
+   %th Credit
+   %th Debit
+   %th Amount
+   %th Date
+   %th Note
+   %th User
+ %tbody
+ - @transactions.each do |p|
+  %tr
+   %td= link_to  p.credit.name , account_path(p.credit.id)
+   %td= link_to  p.debit.name ,account_path(p.debit.id)
+   %td= p.amount
+   %td= p.created_at
+   %td= p.note
+   %td= link_to  p.user.email , user_show_path(p.user.id)
+
+.well
+ = form_tag root_path ,:method => :get ,:id => :search_transaction ,:class =>"from-horizontal" do
+  Search by note
+  = search_field_tag :note
+  = submit_tag 'Refresh', :id => 'search_submit' ,:class =>"btn btn-primary"

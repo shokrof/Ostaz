@@ -42,19 +42,21 @@ class TransactionsController < ApplicationController
   @account=Account.all.collect {|p| p.name }
     created= true
     msg=""
-        account_credit=Account.find_by_name params[:credit]
-        account_debit=Account.find_by_name params[:debit]
+        account_credit=Account.find_by_name params[:transaction][:credit]
+        account_debit=Account.find_by_name params[:transaction][:debit]
+        params[:transaction].delete :credit
+        params[:transaction].delete :debit
         params[:transaction][:account_id_credit]=account_credit.id
 	params[:transaction][:account_id_debit]=account_debit.id
 	params[:transaction][:user_id]=current_user.id
         @t=Transaction.new params[:transaction]
-    
+                 
       respond_to do |format|
       if @t.save
-        format.html { redirect_to @t, notice: 'Account was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Account was successfully created.' }
         format.json { render json: @t, status: :created, location: @t }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to root_path }
         format.json { render json: @t.errors, status: :unprocessable_entity }
       end
     end

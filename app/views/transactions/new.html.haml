@@ -1,28 +1,18 @@
 %h1 New Transactions
 
 = form_tag transactions_path do
-
-
   = label :transaction, :credit, 'Credit'
   %select{name:"credit"}
     - @account.each do  |p|
       %option{value:p }= p 
-
   = label :transaction, :debit, 'Debit'
   %select#debit{name:"debit"}
     - @account.each do  |p|
       %option= p 
-
-
-
   = label :transaction, :amount, 'Amount'
   = text_field :transaction ,'amount'
-
-
   = label :transaction ,:note , 'Note'
   = text_field  :transaction ,'note'
-
-
   = submit_tag 'Save Changes'
 
 
