@@ -1,0 +1,45 @@
+%h1 Account 
+Name
+= @account.name
+%br
+Type
+= @account.account_type.name
+%br
+amount
+= @account.amount
+%br
+
+%table
+ %thead
+  %tr
+   %td Debit
+   %td Credit
+ %tbody
+  - @transactions.each do |t|
+   %tr
+    %td
+     %table
+      - if t.date_debit != ""
+       %tr
+        %td Date
+        %td Amount
+        %td Note 
+      %tr
+       %td= t.date_debit
+       %td= t.debit
+       %td= t.note_debit
+    %td
+     %table
+      - if t.date_credit != ""
+       %tr
+        %td Date
+        %td Amount
+        %td Note
+      %tr
+       %td= t.date_credit
+       %td= t.credit
+       %td= t.note_credit
+
+
+= link_to "ALL Accounts" , accounts_path
+

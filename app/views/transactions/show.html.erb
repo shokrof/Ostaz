@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Account:</b>
-  <%= @transaction.account_id %>
+  <b>Credit:</b>
+  <%= @transaction.account_id_credit %>
+</p>
+
+<p>
+  <b>Debit:</b>
+  <%= @transaction.account_id_debit %>
 </p>
 
 <p>
@@ -11,28 +16,14 @@
 </p>
 
 <p>
-  <b>Account type:</b>
-  <%= @transaction.account_type_id %>
-</p>
-
-<p>
   <b>User:</b>
-  <%= @transaction.user_id %>
+  <%= @transaction.user.email %>
 </p>
 
-<p>
-  <b>Date:</b>
-  <%= @transaction.date %>
-</p>
 
 <p>
   <b>Note:</b>
   <%= @transaction.note %>
-</p>
-
-<p>
-  <b>Transaction:</b>
-  <%= @transaction.transaction_id %>
 </p>
 
 

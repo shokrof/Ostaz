@@ -1,10 +1,10 @@
-%h1 All Transactions
-
-= form_tag transactions_path ,:method => :get ,:id => :search_transaction do
+%h1="Hi I am " + @user.email
+%h2 My transactions
+= form_tag user_show_path ,:method => :get ,:id => :search_transaction do
   Search by note
   = search_field_tag :note
   = submit_tag 'Refresh', :id => 'search_submit'
-%table#projects
+%table#transactions
   %thead
     %tr
       %th Credit
@@ -12,7 +12,6 @@
       %th Amount
       %th Date
       %th Note
-      %th User
   %tbody
   - @transactions.each do |p|
     %tr
@@ -21,9 +20,4 @@
       %td= p.amount
       %td= p.created_at
       %td= p.note
-      %td= p.user.email
-
-= link_to 'Make New Transaction', new_transaction_path
-
-		
 

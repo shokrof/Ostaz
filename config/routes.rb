@@ -1,4 +1,10 @@
 Ostaz::Application.routes.draw do
+  get "welcome/index" , as: 'root' 
+
+  get "user/show/:id" , to: 'user#show', as: 'user_show'
+
+  get "user/index"
+
   resources :transactions
 
 
@@ -13,10 +19,12 @@ Ostaz::Application.routes.draw do
 
 #  get "welcome/index"
 
-
-  root :to => 'welcome#index'
+  
   devise_for :users
+  
 
+
+   
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

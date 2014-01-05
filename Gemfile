@@ -9,20 +9,21 @@ ruby '1.9.3'
 gem 'devise'
 gem 'execjs'
 gem 'haml'
-
+gem 'bootstrap-sass'
 
 group :development ,:test do
  gem 'rspec-rails'
  gem 'sqlite3'
  gem 'execjs'
  gem 'simplecov', :require =>false
+ gem 'rails_layout'
 end
 
 group :production do
   gem 'pg'
 end
 
-
+gem 'rails_12factor'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+
 describe Transaction do
   before(:each) do
     AccountType.create({ name:"Asset" , sign:-1 ,credit:-1, debit:1})
@@ -36,7 +37,6 @@ end
 
   it "should not be able to make transaction where we dont have enough cash" do
      Transaction.make(1,2,1000,"put some cash",1)
-     expect {Transaction.make(2,4,100000,"try to make bigger transaction" ,1)}.to raise_error
      (Account.find 2 ).amount.should eq 1000
   end
 
