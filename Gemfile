@@ -11,10 +11,9 @@ gem 'execjs'
 gem 'haml'
 gem 'bootstrap-sass'
 
-group :development ,:test do
+group :development ,:test  ,:deployment do
  gem 'rspec-rails'
  gem 'sqlite3'
- gem 'execjs'
  gem 'simplecov', :require =>false
  gem 'rails_layout'
  gem 'cucumber-rails', :require => false
@@ -22,6 +21,7 @@ group :development ,:test do
  gem 'database_cleaner'
 
 end
+
 
 group :production do
   gem 'pg'
