@@ -17,6 +17,10 @@ group :development ,:test do
  gem 'execjs'
  gem 'simplecov', :require =>false
  gem 'rails_layout'
+ gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+ gem 'database_cleaner'
+
 end
 
 group :production do
