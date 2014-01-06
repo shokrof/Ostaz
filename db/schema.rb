@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(:version => 20131228191428) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "history_accounts", :force => true do |t|
+    t.integer  "amount"
+    t.integer  "account_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -49,7 +56,9 @@ ActiveRecord::Schema.define(:version => 20131228191428) do
   create_table "transactions", :force => true do |t|
     t.integer  "account_id_credit"
     t.integer  "amount"
+    t.integer  "account_type_id"
     t.integer  "user_id"
+    t.datetime "date"
     t.string   "note"
     t.integer  "account_id_debit"
     t.datetime "created_at",        :null => false
