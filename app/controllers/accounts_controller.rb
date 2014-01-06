@@ -54,8 +54,6 @@ class AccountsController < ApplicationController
   # GET /accounts.json
   def index
     @accounts = Account.all
-
-    
   end
   # GET /accounts/1
   # GET /accounts/1.json
@@ -119,8 +117,9 @@ class AccountsController < ApplicationController
   # DELETE /accounts/1.json
   def destroy
     @account = Account.find(params[:id])
+    @account.histories.each{|a| a.destroy}
     @account.destroy
-
+     
     respond_to do |format|
       format.html { redirect_to accounts_url }
       format.json { head :no_content }
