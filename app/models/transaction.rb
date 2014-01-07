@@ -18,6 +18,8 @@ class Transaction < ActiveRecord::Base
   belongs_to :credit,class_name: "Account",foreign_key: "account_id_credit"
   belongs_to :debit,class_name: "Account", foreign_key: "account_id_debit"
   belongs_to :user
+  attr_accessible :file
+  has_attached_file :file, :styles => { :medium => "500x500>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_with EnoughMoneyValidator
 
   after_save do |transaction|

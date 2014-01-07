@@ -41,12 +41,14 @@ class TransactionsController < ApplicationController
     msg=""
         account_credit=Account.find_by_name params[:transaction][:credit]
         account_debit=Account.find_by_name params[:transaction][:debit]
+        params[:transaction][:file] =params[:file]
         params[:transaction].delete :credit
         params[:transaction].delete :debit
         params[:transaction][:account_id_credit]=account_credit.id
 	params[:transaction][:account_id_debit]=account_debit.id
 	params[:transaction][:user_id]=current_user.id
-        @t=Transaction.new params[:transaction]
+       p params[:transaction] 
+       @t=Transaction.new params[:transaction]
                  
       respond_to do |format|
       if @t.save

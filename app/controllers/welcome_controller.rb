@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+    @trasaction =Transaction.new
     @transactions = Transaction.all
     if params[:note] && !params[:note].empty?
       @transactions =Transaction.find_all_by_note params[:note]
