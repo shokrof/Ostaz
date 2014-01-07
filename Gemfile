@@ -10,6 +10,8 @@ gem 'devise'
 gem 'execjs'
 gem 'haml'
 gem 'bootstrap-sass'
+gem "paperclip", "~> 3.0"
+
 
 group :development ,:test  ,:deployment do
  gem 'rspec-rails'
