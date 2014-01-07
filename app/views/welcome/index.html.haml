@@ -1,10 +1,8 @@
 %h1 Transactions
 .well
- = form_tag transactions_path ,:class => "form-horizontal" do 
+ = form_tag transactions_path , :class => "form-horizontal"  do 
   = label :transaction, :credit, 'Credit'
-  
   = select :transaction ,:credit ,options_for_select(@account)	
-
   = label :transaction, :debit, 'Debit'
   = select :transaction ,:debit ,options_for_select(@account)
   = label :transaction, :amount, 'Amount'

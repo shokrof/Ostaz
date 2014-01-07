@@ -1,20 +1,23 @@
 %h1 All Accounts
-%table#account
-  %thead
-    %tr
-      %th Name
-      %th Amount
-      %th Account Type
-      %th More
-  %tbody
+.well.well-sm
+ = form_tag accounts_path ,:class => "form-vertical"  do
+  = label :transaction, :name, 'Name' 
+  = text_field :account, 'name'
+  = label :account, :amount, 'Amount'
+  = text_field :account, 'amount'
+  = label :account, :account_type, 'Account type'
+  = select :account, :account, @account_types
+  = submit_tag 'Add Account' , :class => "btn  btn-primary"
+
+%table#account.table.table-striped.table-bordered.table-hover
+ %thead
+  %tr
+   %th Name
+   %th Amount
+   %th Account Type
+ %tbody
   - @accounts.each do |p|
-    %tr
-      %td= p.name
-      %td= p.amount
-      %td= p.account_type.name
-      %td= link_to "More about #{p.name}", account_path(p)
-
-= link_to 'Add new account', new_account_path
-
-		
-
+   %tr
+    %td= link_to p.name , account_path(p.id) 
+    %td= p.amount
+    %td= p.account_type.name

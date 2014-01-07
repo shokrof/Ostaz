@@ -54,6 +54,9 @@ class AccountsController < ApplicationController
   # GET /accounts.json
   def index
     @accounts = Account.all
+    @account_types=[]
+    AccountType.all.each {|a| @account_types.push a.name}
+    session[:project]=3
   end
   # GET /accounts/1
   # GET /accounts/1.json
@@ -63,14 +66,12 @@ class AccountsController < ApplicationController
     @account.transactions_credit.each {|t| @transactions.push(Transaction_output.new(t,"credit")) }
     @account.transactions_debit.each {|t| @transactions.push(Transaction_output.new(t,"debit")) }
     @transactions.sort_by! {|a| a.date }
+
  end
 
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-    @account_types=[]
-    AccountType.all.each {|a| @account_types.push a.name}
-    session[:project]=3
   end
 
   # GET /accounts/1/edit
