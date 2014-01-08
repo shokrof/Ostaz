@@ -1,0 +1,17 @@
+%h2 Sign up
+= form_tag  new_user_registration_path  do
+  %div
+    = label :user, :email 
+    %br/
+    = email_field :user, :email, :autofocus => true
+  %div
+    = label :user, :password
+    %br/
+    = password_field :user, :password
+  %div
+    =label :user, :Role
+    %br/
+    = select :user,:role_id ,Role.all.collect{|a| [a.name,a.id]}
+  
+  
+  %div= submit_tag "Create User" ,:class_name => "btn btn-primary"

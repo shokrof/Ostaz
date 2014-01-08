@@ -13,7 +13,9 @@ Ostaz::Application.routes.draw do
   get "user/show/:id" , to: 'user#show', as: 'user_show'
 
   get "user/index"
-
+  
+  post "user/sign_up" , to:"user#create"
+  get "user/sign_up" , to:"user#sign_up" ,as:'new_user_registration'
   resources :transactions
 
 

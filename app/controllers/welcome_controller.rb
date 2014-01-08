@@ -1,8 +1,4 @@
 class WelcomeController < ApplicationController
- 
-  
-
-
    def index
     @trasaction =Transaction.new
     @transactions = Transaction.all

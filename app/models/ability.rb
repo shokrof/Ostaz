@@ -30,12 +30,21 @@ class Ability
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
 
-   user ||= User.new
+   user ||= User.new 
    if user.role   
       can :read , AccountType , :id => user.role.role_can_view.collect{|a| a.account_type_id }	 
       can :manage , AccountType , :id => user.role.role_can_edit.collect{|a| a.account_type_id }	 
-   end
+      can :read ,Role , :id => user.role.id
 
+      can :read ,Account , :id => user.role.role_can_view.collect{ |a| a.account_type.accounts.collect{|t| t.id} }.flatten
+      can :manage ,Account , :id => user.role.role_can_edit.collect{ |a| a.account_type.accounts.collect{|t| t.id} }.flatten
+     
+      if user.role.name == "admin"
+        can :manage ,User
+        can :create ,AccountType
+        can :manage , Role
+      end
+  end
 
    
   end

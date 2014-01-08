@@ -1,0 +1,14 @@
+%h1 All Users
+%table#account_type.table.table-striped.table-bordered.table-hover
+ %thead
+  %tr
+   %th User
+   %th Role
+ %tbody
+  - @users.each do |p|
+   %tr
+    %td= link_to p.email , user_show_path(p.id) 
+    %td= link_to p.role.name ,role_path(p.role.id)
+
+- if can? :create ,current_user
+ = link_to "Create New User" , :new_user_registration  

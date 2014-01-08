@@ -1,4 +1,5 @@
 class Transaction_output
+
   def initialize(a,type)
       if type == "credit"	
          @credit=a.amount.to_s
@@ -50,6 +51,7 @@ class Transaction_output
 end
 
 class AccountsController < ApplicationController
+load_and_authorize_resource
   # GET /accounts
   # GET /accounts.json
   def index
