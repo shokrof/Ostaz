@@ -53,9 +53,8 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
-    @account_types=[]
-    AccountType.all.each {|a| @account_types.push a.name}
+    @accounts = Account.all.select{|a| can?(:read,a.account_type)}
+    @account_types=AccountType.all.select{|a| can?(:read,a)}.collect{|a| a.name}
     session[:project]=3
   end
   # GET /accounts/1

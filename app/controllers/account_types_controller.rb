@@ -1,12 +1,14 @@
 class AccountTypesController < ApplicationController
+  load_and_authorize_resource
   # GET /account_types
   # GET /account_types.json
   def index
-    @account_types = AccountType.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @account_types }
+    @account_types = AccountType.all.select{|a| can?(:read,a)}
+    @accounts_sum={}
+    @account_types.each do |a|
+     sum=0
+     a.accounts.each{|acc| sum+=acc.amount}
+     @accounts_sum[a.name]=sum
     end
   end
 

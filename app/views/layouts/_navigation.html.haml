@@ -1,13 +1,27 @@
 %nav.navbar.navbar-inverse.navbar-fixed-top
-  .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to 'Ostaz', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav.navbar-brand= render 'layouts/navigation_links'
-      %ul.nav.navbar-nav.navbar-right.navbar-brand=if current_user != nil then link_to current_user.email , user_show_path(current_user.id) else link_to "Sign in" ,new_user_session_path end
+ .container
+  .navbar-header
+   %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", type: "button"}
+    %span.sr-only Toggle navigation
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
+   = link_to 'Ostaz', root_path, class: 'navbar-brand'
+  .collapse.navbar-collapse
+   %ul.nav.navbar-nav.navbar-brand= render 'layouts/navigation_links'
+   %ul.nav.navbar-nav.navbar-right
+    %li.dropdown
+     %a.dropdown-toggle{"data-toggle" => "dropdown" ,"href" => "#"}=if current_user != nil then current_user.email else "Guest" end
+     - if current_user !=nil
+      %ul.dropdown-menu
+       %li
+        =link_to "View" ,user_show_path(current_user.id)
+       %li
+        =link_to "Sign Out" ,:destroy_user_session ,"method" => :delete
+     - else
+      %ul.dropdown-menu
+       %li
+        =link_to "Sign In" ,:new_user_session
+       %li        
+        =link_to "Register" ,:new_user_registration
 
