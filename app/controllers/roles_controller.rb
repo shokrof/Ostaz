@@ -3,22 +3,12 @@ class RolesController < ApplicationController
   # GET /roles.json
   def index
     @roles = Role.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @roles }
-    end
   end
 
   # GET /roles/1
   # GET /roles/1.json
   def show
     @role = Role.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @role }
-    end
   end
 
   # GET /roles/new
@@ -35,6 +25,7 @@ class RolesController < ApplicationController
   # GET /roles/1/edit
   def edit
     @role = Role.find(params[:id])
+    @account_types=AccountType.all.collect{|a| [a.name,a.id]}
   end
 
   # POST /roles
@@ -53,20 +44,40 @@ class RolesController < ApplicationController
     end
   end
 
+ def add_ability
+    @role = Role.find(params[:id])
+    if params[:role][:id] == "Edit"
+       @role.role_can_edit.create :account_type_id => params[:role][:name].to_i
+    else
+       @role.role_can_view.create :account_type_id =>  params[:role][:name].to_i
+    end
+    redirect_to role_path(@role.id)
+ end
+ def delete_view_ability
+    @role =Role.find(params[:id])
+    @role.role_can_view.find{|a| a.account_type_id = params[:account_type_id]}.destroy
+    redirect_to role_path(@role.id)
+ end
+ def delete_edit_ability
+    @role =Role.find(params[:id])
+    @role.role_can_edit.find{|a| a.account_type_id = params[:account_type_id]}.destroy
+    redirect_to role_path(@role.id)
+ end
+
+
   # PUT /roles/1
   # PUT /roles/1.json
   def update
-    @role = Role.find(params[:id])
 
-    respond_to do |format|
-      if @role.update_attributes(params[:role])
-        format.html { redirect_to @role, notice: 'Role was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @role.errors, status: :unprocessable_entity }
-      end
-    end
+   # respond_to do |format|
+  #    if @role.update_attributes(params[:role])
+       # format.html { redirect_to @role, notice: 'Role was successfully updated.' }
+      #  format.json { head :no_content }
+     # else
+      #  format.html { render action: "edit" }
+     #   format.json { render json: @role.errors, status: :unprocessable_entity }
+    #  end
+   # end
   end
 
   # DELETE /roles/1
