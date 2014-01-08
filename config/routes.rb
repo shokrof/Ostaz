@@ -2,6 +2,9 @@ Ostaz::Application.routes.draw do
   
 
 
+  resources :roles
+
+
 #  get "welcome/index", as:"root"
 
   get "user/show/:id" , to: 'user#show', as: 'user_show'

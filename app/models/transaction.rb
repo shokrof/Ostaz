@@ -33,6 +33,12 @@ class Transaction < ActiveRecord::Base
   def self.make(account_id_credit ,account_id_debit ,amount , note,user_id)
        Transaction.create({account_id_credit:account_id_credit ,account_id_debit:account_id_debit,amount:amount,note:note,user_id:user_id})
   end
+
+  #def self.all
+  #  super.take_while{|t|can?(:read, Object.const_set(t.credit.account_type.name.classify, Class.new))&&can?(:read, Object.const_set(t.debit.account_type.name.classify, Class.new)) }
+  
+ # end
+  
 end
 
 

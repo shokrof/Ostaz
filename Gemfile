@@ -11,7 +11,7 @@ gem 'execjs'
 gem 'haml'
 gem 'bootstrap-sass'
 gem "paperclip", "~> 3.0"
-
+gem "cancan"
 
 group :development ,:test  ,:deployment do
  gem 'rspec-rails'
