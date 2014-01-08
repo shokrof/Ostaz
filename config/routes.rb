@@ -2,12 +2,20 @@ Ostaz::Application.routes.draw do
   
 
 
+  resources :roles
+  
+  get "roles/delete_edit_ability/:id" ,to: "roles#delete_edit_ability" ,as: "delete_edit_ability"
+  get "roles/delete_view_ability/:id" ,to: "roles#delete_view_ability" ,as: "delete_view_ability"
+  post "roles/add_ability/:id" ,to: 'roles#add_ability' ,as: "add_ability"
+  
 #  get "welcome/index", as:"root"
 
   get "user/show/:id" , to: 'user#show', as: 'user_show'
 
   get "user/index"
-
+  
+  post "user/sign_up" , to:"user#create"
+  get "user/sign_up" , to:"user#sign_up" ,as:'new_user_registration'
   resources :transactions
 
 

@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+load_and_authorize_resource
   def show
    @user=User.find params[:id]
    if params[:note] && !params[:note].empty?
@@ -11,5 +12,14 @@ class UserController < ApplicationController
   end
 
   def index
+   @users=User.all
   end
+
+  def create
+    User.create params[:user]
+    redirect_to user_index_path
+  end
+
+  def sign_up
+  end	
 end

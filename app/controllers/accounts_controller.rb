@@ -1,4 +1,5 @@
 class Transaction_output
+
   def initialize(a,type)
       if type == "credit"	
          @credit=a.amount.to_s
@@ -50,12 +51,12 @@ class Transaction_output
 end
 
 class AccountsController < ApplicationController
+load_and_authorize_resource
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
-    @account_types=[]
-    AccountType.all.each {|a| @account_types.push a.name}
+    @accounts = Account.all.select{|a| can?(:read,a.account_type)}
+    @account_types=AccountType.all.select{|a| can?(:read,a)}.collect{|a| a.name}
     session[:project]=3
   end
   # GET /accounts/1

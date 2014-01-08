@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140107171927) do
+ActiveRecord::Schema.define(:version => 20140107192814) do
 
   create_table "account_types", :force => true do |t|
     t.string   "name"
@@ -53,6 +53,26 @@ ActiveRecord::Schema.define(:version => 20140107171927) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "role_can_edits", :force => true do |t|
+    t.integer  "role_id"
+    t.integer  "account_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "role_can_views", :force => true do |t|
+    t.integer  "role_id"
+    t.integer  "account_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "transactions", :force => true do |t|
     t.integer  "account_id_credit"
     t.integer  "amount"
@@ -82,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20140107171927) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

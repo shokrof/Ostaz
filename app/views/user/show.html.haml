@@ -1,23 +1,32 @@
-%h1="Hi I am " + @user.email
+%h3="User : " + @user.email
+%h3= "Role : "+@user.role.name 
 %h2 My transactions
 = form_tag user_show_path ,:method => :get ,:id => :search_transaction do
-  Search by note
-  = search_field_tag :note
-  = submit_tag 'Refresh', :id => 'search_submit'
-%table#transactions
-  %thead
-    %tr
-      %th Credit
-      %th Debit
-      %th Amount
-      %th Date
-      %th Note
-  %tbody
-  - @transactions.each do |p|
-    %tr
-      %td= p.credit.name
-      %td= p.debit.name
-      %td= p.amount
-      %td= p.created_at
-      %td= p.note
+ Search by note
+ = search_field_tag :note
+ = submit_tag 'Refresh', :id => 'search_submit'
+
+%table#projects.table.table-striped.table-bordered.table-hover
+ %thead
+  %tr
+   %th Credit
+   %th Debit
+   %th Amount
+   %th Date
+   %th Note
+   %th User
+   %th File
+ %tbody
+ - @transactions.each do |p|
+  %tr
+   %td= link_to  p.credit.name , account_path(p.credit.id)
+   %td= link_to  p.debit.name ,account_path(p.debit.id)
+   %td= p.amount
+   %td= p.created_at
+   %td= p.note
+   %td= link_to  p.user.email , user_show_path(p.user.id)
+   -if p.file.url != "/images/original/missing.png"
+    %td
+     %a{:href => p.file.url}
+      = image_tag p.file.url(:thumb)
 
