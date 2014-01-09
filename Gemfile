@@ -13,7 +13,7 @@ gem 'bootstrap-sass'
 gem "paperclip", "~> 3.0"
 gem "cancan"
 
-group :development ,:test  ,:deployment do
+group :development ,:test   do
  gem 'rspec-rails'
  gem 'sqlite3'
  gem 'simplecov', :require =>false
