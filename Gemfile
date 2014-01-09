@@ -10,14 +10,20 @@ gem 'devise'
 gem 'execjs'
 gem 'haml'
 gem 'bootstrap-sass'
+gem "paperclip", "~> 3.0"
+gem "cancan"
 
-group :development ,:test do
+group :development ,:test  ,:deployment do
  gem 'rspec-rails'
  gem 'sqlite3'
- gem 'execjs'
  gem 'simplecov', :require =>false
  gem 'rails_layout'
+ gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+ gem 'database_cleaner'
+
 end
+
 
 group :production do
   gem 'pg'

@@ -1,0 +1,23 @@
+%h1= @role.name
+%div.panel.panel-primary
+ %div.panel-heading
+  %h3.panel-title View
+ %div.panel-body
+  -@role.role_can_view.all.each do |r|
+   =r.account_type.name
+   =link_to "Delete" ,delete_view_ability_path(:id =>@role.id ,:account_type_id => r.account_type.id), :id => ("delete_view_"+r.account_type.name)
+   %br
+
+%div.panel.panel-primary
+ %div.panel-heading
+  %h3.panel-title Edit
+ %div.panel-body
+  -@role.role_can_edit.all.each do |r|
+   =r.account_type.name
+   =link_to "Delete" ,delete_edit_ability_path(:id =>@role.id ,:account_type_id => r.account_type.id), :id => ("delete_edit_"+r.account_type.name)
+   %br
+
+
+= link_to 'Add Responsibilities' ,edit_role_path(@role.id)
+%br
+= link_to 'Back', roles_path 

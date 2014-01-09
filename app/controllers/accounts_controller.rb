@@ -1,4 +1,5 @@
 class Transaction_output
+
   def initialize(a,type)
       if type == "credit"	
          @credit=a.amount.to_s
@@ -50,12 +51,13 @@ class Transaction_output
 end
 
 class AccountsController < ApplicationController
+load_and_authorize_resource
   # GET /accounts
   # GET /accounts.json
   def index
-    @accounts = Account.all
-
-    
+    @accounts = Account.all.select{|a| can?(:read,a.account_type)}
+    @account_types=AccountType.all.select{|a| can?(:read,a)}.collect{|a| a.name}
+    session[:project]=3
   end
   # GET /accounts/1
   # GET /accounts/1.json
@@ -65,14 +67,12 @@ class AccountsController < ApplicationController
     @account.transactions_credit.each {|t| @transactions.push(Transaction_output.new(t,"credit")) }
     @account.transactions_debit.each {|t| @transactions.push(Transaction_output.new(t,"debit")) }
     @transactions.sort_by! {|a| a.date }
+
  end
 
   # GET /accounts/new
   # GET /accounts/new.json
   def new
-    @account_types=[]
-    AccountType.all.each {|a| @account_types.push a.name}
-    session[:project]=3
   end
 
   # GET /accounts/1/edit
@@ -101,29 +101,30 @@ class AccountsController < ApplicationController
 
   # PUT /accounts/1
   # PUT /accounts/1.json
-  def update
-    @account = Account.find(params[:id])
+ # def update
+ #   @account = Account.find(params[:id])
 
-    respond_to do |format|
-      if @account.update_attributes(params[:account])
-        format.html { redirect_to @account, notice: 'Account was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @account.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #  respond_to do |format|
+    #  if @account.update_attributes(params[:account])
+    #    format.html { redirect_to @account, notice: 'Account was successfully updated.' }
+    #    format.json { head :no_content }
+    #  else
+    #    format.html { render action: "edit" }
+   #     format.json { render json: @account.errors, status: :unprocessable_entity }
+  #    end
+ #   end
+#  end
 
   # DELETE /accounts/1
   # DELETE /accounts/1.json
-  def destroy
-    @account = Account.find(params[:id])
-    @account.destroy
-
-    respond_to do |format|
-      format.html { redirect_to accounts_url }
-      format.json { head :no_content }
-    end
-  end
+#  def destroy
+ #   @account = Account.find(params[:id])
+ #   @account.histories.each{|a| a.destroy}
+#    @account.destroy
+     
+ #   respond_to do |format|
+ #     format.html { redirect_to accounts_url }
+ #     format.json { head :no_content }
+ #   end
+#  end
 end

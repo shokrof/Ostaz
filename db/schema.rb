@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131228191428) do
+ActiveRecord::Schema.define(:version => 20140107192814) do
 
   create_table "account_types", :force => true do |t|
     t.string   "name"
@@ -53,6 +53,26 @@ ActiveRecord::Schema.define(:version => 20131228191428) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "role_can_edits", :force => true do |t|
+    t.integer  "role_id"
+    t.integer  "account_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "role_can_views", :force => true do |t|
+    t.integer  "role_id"
+    t.integer  "account_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "transactions", :force => true do |t|
     t.integer  "account_id_credit"
     t.integer  "amount"
@@ -63,6 +83,10 @@ ActiveRecord::Schema.define(:version => 20131228191428) do
     t.integer  "account_id_debit"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "users", :force => true do |t|
@@ -78,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20131228191428) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,17 +1,17 @@
 %h1 Transactions
 .well
- = form_tag transactions_path ,:class => "form-horizontal" do 
+ = form_tag transactions_path ,:multipart => "true"  do 
   = label :transaction, :credit, 'Credit'
-  
   = select :transaction ,:credit ,options_for_select(@account)	
-
   = label :transaction, :debit, 'Debit'
   = select :transaction ,:debit ,options_for_select(@account)
   = label :transaction, :amount, 'Amount'
   = text_field :transaction ,'amount'
   = label :transaction ,:note , 'Note'
   = text_field  :transaction ,'note'
-  = submit_tag 'Save Changes', :id => 'make submit' , :class => "btn btn-primary"
+  = label :transaction ,:file , 'File'
+  = file_field_tag   'file'
+  = submit_tag 'Save Changes', :id => 'make submit' , :class => "btn btn-primary left"
 
 %table#projects.table.table-striped.table-bordered.table-hover
  %thead
@@ -22,6 +22,7 @@
    %th Date
    %th Note
    %th User
+   %th File
  %tbody
  - @transactions.each do |p|
   %tr
@@ -31,6 +32,10 @@
    %td= p.created_at
    %td= p.note
    %td= link_to  p.user.email , user_show_path(p.user.id)
+   -if p.file.url != "/images/original/missing.png"
+    %td
+     %a{:href => p.file.url}
+      = image_tag p.file.url(:thumb)
 
 .well
  = form_tag root_path ,:method => :get ,:id => :search_transaction ,:class =>"from-horizontal" do

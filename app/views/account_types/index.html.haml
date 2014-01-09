@@ -1,0 +1,19 @@
+%h1 All Accounts Types
+.well.well-sm
+ = form_tag account_types_path ,:class => "form-vertical"  do
+  = label :account_type, :name, 'Name' 
+  = text_field :account_type, 'name'
+  = label :account_type, :account_type, 'Like'
+  = select :account, :like, @account_types.collect{|a| a.name}
+  = submit_tag 'Add Account' , :class => "btn  btn-primary"
+
+%table#account_type.table.table-striped.table-bordered.table-hover
+ %thead
+  %tr
+   %th Name
+   %th Amount
+ %tbody
+  - @account_types.each do |p|
+   %tr
+    %td= link_to p.name , account_type_path(p.id) 
+    %td= @accounts_sum[p.name]

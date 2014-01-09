@@ -1,0 +1,11 @@
+%h1= "Editing "+ @role.name
+.well
+ = form_tag add_ability_path ,:multipart => "true"  do
+  = label :role, :name, 'Account Type'
+  = select :role, :name,@account_types
+  = label :role, :id, 'Ability'
+  = select :role ,:id ,["View" ,"Edit"] 
+  = submit_tag 'Save Changes', :id => 'make submit' , :class => "btn btn-primary left"
+
+
+bye

@@ -1,0 +1,25 @@
+%h1 All Roles
+.well.well-sm
+ = form_tag roles_path ,:class => "form-vertical"  do
+  = label :role, :name, 'Name'
+  = text_field :role, 'name'
+  = submit_tag 'Add Role', :id => 'add role' , :class => "btn btn-primary left"
+
+
+%table#roles.table.table-striped.table-bordered.table-hover
+ %thead
+  %tr
+   %th Name
+   %th View
+   %th Edit
+ %tbody
+  - @roles.each do |r|
+   %tr
+    %td= link_to r.name , role_path(r.id)
+    %td= r.role_can_view.collect{|a| a.account_type.name}
+    %td= r.role_can_edit.collect{|a| a.account_type.name}
+      
+
+
+  
+

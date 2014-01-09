@@ -24,5 +24,9 @@ equity.accounts.create name:"Revenue" , amount:0
 expenses.accounts.create name:"Office Expenses" ,amount:0
 expenses.accounts.create name:"Project Expenses" ,amount:0
 
+role_admin=Role.create name:"admin"
+user_admin=User.create email:"admin@ostaz.com",  password: "12345678" ,role_id:role_admin.id
+
+AccountType.all.each{|a| RoleCanView.create role_id: role_admin.id ,account_type_id: a.id}
 
 
