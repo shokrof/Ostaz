@@ -68,13 +68,13 @@ class AccountTypesController < ApplicationController
 
   # DELETE /account_types/1
   # DELETE /account_types/1.json
-  def destroy
-    @account_type = AccountType.find(params[:id])
-    @account_type.accounts.each{|a| a.destroy}
-    @account_type.destroy
-    respond_to do |format|
-      format.html { redirect_to account_types_url }
-      format.json { head :no_content }
-    end
-  end
+ # def destroy
+   # @account_type = AccountType.find(params[:id])
+   # @account_type.accounts.each{|a| a.destroy}
+   # @account_type.destroy
+   # respond_to do |format|
+   #   format.html { redirect_to account_types_url }
+  #    format.json { head :no_content }
+ #   end
+#  end
 end
