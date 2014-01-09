@@ -36,9 +36,8 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
+ begin
   @account=Account.all.collect {|p| p.name }
-    created= true
-    msg=""
         account_credit=Account.find_by_name params[:transaction][:credit]
         account_debit=Account.find_by_name params[:transaction][:debit]
         params[:transaction][:file] =params[:file]
@@ -50,9 +49,12 @@ class TransactionsController < ApplicationController
        p params[:transaction] 
        @t=Transaction.new params[:transaction]
                  
-        begin
+        
          @t.save 
          redirect_to root_path
+
+        rescue ActiveRecord::ActiveRecordError  
+          redirect_to root_path ,:alert => "Please fill the form well"
         rescue Exception => e
          redirect_to root_path ,:alert => e.message
        end
