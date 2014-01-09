@@ -18,6 +18,6 @@
  %tbody
   - @accounts.each do |p|
    %tr
-    %td= link_to p.name , account_path(p.id) 
+    %td= link_to p.name , account_path(p.id) , :id => ("show_"+p.name) 
     %td= p.amount
     %td= p.account_type.name

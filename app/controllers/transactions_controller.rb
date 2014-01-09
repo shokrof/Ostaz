@@ -50,15 +50,14 @@ class TransactionsController < ApplicationController
        p params[:transaction] 
        @t=Transaction.new params[:transaction]
                  
-      respond_to do |format|
-      if @t.save
-        format.html { redirect_to root_path, notice: 'Account was successfully created.' }
-        format.json { render json: @t, status: :created, location: @t }
-      else
-        format.html { redirect_to root_path }
-        format.json { render json: @t.errors, status: :unprocessable_entity }
-      end
-    end
+        begin
+         @t.save 
+         redirect_to root_path
+        rescue Exception => e
+         redirect_to root_path ,:alert => e.message
+       end
+ 
+    
 
   end
 

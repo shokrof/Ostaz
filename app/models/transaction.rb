@@ -1,13 +1,13 @@
 class EnoughMoneyValidator < ActiveModel::Validator
  def validate(record)
        if record.account_id_credit ==record.account_id_debit
-		record.errors[:base] << "Cannot make transactions between the same account" 
+		raise  "Cannot make transactions between the same account" 
        else
         account_credit=Account.find record.account_id_credit
         account_debit=Account.find record.account_id_debit
 	amount=record.amount.to_i
        	if((account_credit.amount + amount*account_credit.account_type.credit)<0||(account_debit.amount + amount*account_debit.account_type.debit)<0)
-            record.errors[:base] << "Accounts doesnt have enough money"
+            raise  "Accounts doesnt have enough money"
        	end
        end
  end
