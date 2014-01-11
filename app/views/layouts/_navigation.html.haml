@@ -10,6 +10,9 @@
   .collapse.navbar-collapse
    %ul.nav.navbar-nav.navbar-brand= render 'layouts/navigation_links'
    %ul.nav.navbar-nav.navbar-right
+    = form_tag root_path ,:method => :post ,:class =>"navbar-form navbar-left navbar-brand" do
+     = autocomplete_field :search, "term", welcome_autocomplete_autocomplete_term_path , :calss => "form-control col-lg-8" , :placeholder => "search"
+
     %li.dropdown
      %a.dropdown-toggle{"data-toggle" => "dropdown" ,"href" => "#"}
       =if current_user != nil then current_user.email else "Guest" end
