@@ -33,7 +33,7 @@ Ostaz::Application.routes.draw do
   
   devise_for :users
   
-
+  get 'welcome/autocomplete_transaction_note'
 
    
   # The priority is based upon order of creation:

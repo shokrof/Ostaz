@@ -40,5 +40,5 @@
 .well
  = form_tag root_path ,:method => :get ,:id => :search_transaction ,:class =>"from-horizontal" do
   Search by note
-  = search_field_tag :note
+  = autocomplete_field :transaction ,"note", welcome_autocomplete_transaction_note_path
   = submit_tag 'Refresh', :id => 'search_submit' ,:class =>"btn btn-primary"
