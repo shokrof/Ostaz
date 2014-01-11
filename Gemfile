@@ -13,6 +13,9 @@ gem 'bootstrap-sass'
 gem "paperclip", "~> 3.0"
 gem "cancan"
 
+gem 'rails3-jquery-autocomplete'
+gem 'nifty-generators'
+
 group :development ,:test  ,:deployment do
  gem 'rspec-rails'
  gem 'sqlite3'
