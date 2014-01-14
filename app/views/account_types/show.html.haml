@@ -1,0 +1,22 @@
+%h1 Account Type
+Name
+= @account.name
+%br
+amount
+= @account.accounts.collect{|a| a.amount}.sum
+%br
+
+%table.table.table-striped.table-bordered.table-hover
+ %thead
+  %tr
+   %td Account
+   %td Amount
+ %tbody
+  - @account.accounts.each do |t|
+   %tr
+    %td=t.name
+    %td=t.amount
+    
+
+= link_to "Other" , account_types_path
+

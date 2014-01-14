@@ -14,14 +14,14 @@ class AccountTypesController < ApplicationController
 
   # GET /account_types/1
   # GET /account_types/1.json
-  #~ def show
-    #~ @account_type = AccountType.find(params[:id])
-#~ 
+   def show
+     @account = AccountType.find(params[:id])
+ 
     #~ respond_to do |format|
       #~ format.html # show.html.erb
       #~ format.json { render json: @account_type }
     #~ end
-  #~ end
+    end
 
   # GET /account_types/new
   # GET /account_types/new.json
@@ -37,10 +37,15 @@ class AccountTypesController < ApplicationController
   # POST /account_types
   # POST /account_types.json
   def create
-    @account_type = AccountType.new(params[:account_type])
 
+    like=AccountType.find_by_name params[:account][:like]
+    params[:account_type][:credit]=like.credit
+    params[:account_type][:debit]=like.debit
+  
+    @account_type = AccountType.new(params[:account_type])
     respond_to do |format|
       if @account_type.save
+        current_user.role.role_can_edit.create :account_type_id => @account_type.id
         format.html { redirect_to @account_type, notice: 'Account type was successfully created.' }
         format.json { render json: @account_type, status: :created, location: @account_type }
       else

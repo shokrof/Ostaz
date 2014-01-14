@@ -33,9 +33,9 @@ Ostaz::Application.routes.draw do
   
   devise_for :users
   
+  get 'welcome/autocomplete_autocomplete_term'
 
-
-   
+  post '/' ,to: 'welcome#search' ,as: 'search'  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
