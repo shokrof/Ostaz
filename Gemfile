@@ -13,14 +13,7 @@ gem 'bootstrap-sass'
 gem "paperclip", "~> 3.0"
 gem "cancan"
 
-<<<<<<< HEAD
 group :development ,:test   do
-=======
-gem 'rails3-jquery-autocomplete'
-gem 'nifty-generators'
-
-group :development ,:test  ,:deployment do
->>>>>>> refs/heads/release/Release-12
  gem 'rspec-rails'
  gem 'sqlite3'
  gem 'simplecov', :require =>false

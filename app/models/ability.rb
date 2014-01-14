@@ -38,12 +38,7 @@ class Ability
 
       can :read ,Account , :id => user.role.role_can_view.collect{ |a| a.account_type.accounts.collect{|t| t.id} }.flatten
       can :manage ,Account , :id => user.role.role_can_edit.collect{ |a| a.account_type.accounts.collect{|t| t.id} }.flatten
-   
-      can :create ,Account , :id => user.role.role_can_edit.collect{ |a| a.account_type.accounts.collect{|t| t.id} }.flatten
-      
-
-       can :manage ,Project      
- 
+     
       if user.role.name == "admin"
         can :manage ,User
         can :create ,AccountType

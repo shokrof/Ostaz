@@ -51,19 +51,18 @@ class Transaction_output
 end
 
 class AccountsController < ApplicationController
-#load_and_authorize_resource
+load_and_authorize_resource
   # GET /accounts
   # GET /accounts.json
   def index
     @accounts = Account.all.select{|a| can?(:read,a.account_type)}
-    @account_types=AccountType.all.select{|a| can?(:read,a)}.collect{|a| [a.name,a.id]}
+    @account_types=AccountType.all.select{|a| can?(:read,a)}.collect{|a| a.name}
     session[:project]=3
   end
   # GET /accounts/1
   # GET /accounts/1.json
   def show
     @account = Account.find(params[:id])
-    authorize! :show, @account
     @transactions =[]
     @account.transactions_credit.each {|t| @transactions.push(Transaction_output.new(t,"credit")) }
     @account.transactions_debit.each {|t| @transactions.push(Transaction_output.new(t,"debit")) }
@@ -84,7 +83,9 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.json
   def create
-   # params[:account][:project_id]=session[:project]
+    params[:account][:account_type_id]=(AccountType.find_by_name params[:account][:account] ).id
+    params[:account].delete :account
+    params[:account][:project_id]=session[:project]
     @account=Account.new params[:account]
         respond_to do |format|
       if @account.save

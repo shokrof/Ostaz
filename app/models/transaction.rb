@@ -14,7 +14,6 @@ class EnoughMoneyValidator < ActiveModel::Validator
 end
 
 class Transaction < ActiveRecord::Base
-include Rails.application.routes.url_helpers
   attr_accessible :account_id_credit,:account_id_debit, :amount, :note, :user_id 
   belongs_to :credit,class_name: "Account",foreign_key: "account_id_credit"
   belongs_to :debit,class_name: "Account", foreign_key: "account_id_debit"
@@ -30,7 +29,6 @@ include Rails.application.routes.url_helpers
 	account_debit.amount=account_debit.amount + amount*account_debit.account_type.debit
 	account_credit.save
 	account_debit.save
-        Autocomplete.create term: transaction.note , path: root_path("search" => transaction.note )
   end
   def self.make(account_id_credit ,account_id_debit ,amount , note,user_id)
        Transaction.create({account_id_credit:account_id_credit ,account_id_debit:account_id_debit,amount:amount,note:note,user_id:user_id})

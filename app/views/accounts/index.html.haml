@@ -6,7 +6,7 @@
   = label :account, :amount, 'Amount'
   = text_field :account, 'amount'
   = label :account, :account_type, 'Account type'
-  = select :account, :account_type_id, @account_types
+  = select :account, :account, @account_types
   = submit_tag 'Add Account' , :class => "btn  btn-primary"
 
 %table#account.table.table-striped.table-bordered.table-hover
