@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+include Rails.application.routes.url_helpers
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -10,5 +11,11 @@ class User < ActiveRecord::Base
   has_many :projects
   has_many :transactions
   belongs_to :role
+  
+
+  after_save do |u|
+   Autocomplete.create term: u.email , path:user_show_path(u.id)
+
+  end
 
 end

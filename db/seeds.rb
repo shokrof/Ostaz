@@ -42,3 +42,7 @@ Transaction.make(cash.id,debt.id,50,"pay part of the debt",user_assit.id)
 
 
 
+Transaction.make(capital.id,cash.id,10000,"Put Some in the bussiness ",user_admin.id)
+
+
+
