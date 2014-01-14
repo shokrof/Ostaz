@@ -19,10 +19,10 @@ end
 	Account.valid.should eq true
 	Transaction.make(Account_bank.id,Account_Debt.id,5000,"pay part of the debt",1)
 	Account.valid.should eq true
-#	(Account.find_by_name :Bank).amount.should eq 104900
- #    	(Account.find_by_name :Debt).amount.should eq 5000
-  #      (Account.find_by_name "Project Expenses").amount.should eq 100
-#	(Account.find_by_name :Capital).amount.should eq 100000
+	(Account.find_by_name :Bank).amount.should eq 104900
+     	(Account.find_by_name :Debt).amount.should eq 5000
+        (Account.find_by_name "Project Expenses").amount.should eq 100
+	(Account.find_by_name :Capital).amount.should eq 100000
   end
 
 
