@@ -14,14 +14,14 @@ class AccountTypesController < ApplicationController
 
   # GET /account_types/1
   # GET /account_types/1.json
-  #~ def show
-    #~ @account_type = AccountType.find(params[:id])
-#~ 
+   def show
+     @account = AccountType.find(params[:id])
+ 
     #~ respond_to do |format|
       #~ format.html # show.html.erb
       #~ format.json { render json: @account_type }
     #~ end
-  #~ end
+    end
 
   # GET /account_types/new
   # GET /account_types/new.json

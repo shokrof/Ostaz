@@ -63,6 +63,7 @@ class AccountsController < ApplicationController
   # GET /accounts/1.json
   def show
     @account = Account.find(params[:id])
+    authorize! :show, @account
     @transactions =[]
     @account.transactions_credit.each {|t| @transactions.push(Transaction_output.new(t,"credit")) }
     @account.transactions_debit.each {|t| @transactions.push(Transaction_output.new(t,"debit")) }
